@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume — Hussain Afroz Khan | AI/ML Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111111'/><rect x='0' y='78' width='100' height='10' fill='%232563EB'/><text x='50' y='58' font-family='Arial' font-size='48' font-weight='700' fill='white' text-anchor='middle'>H</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -23,16 +24,8 @@
       line-height: 1.6;
       padding: 40px 20px;
     }
-    .resume-container {
-      max-width: 820px;
-      margin: 0 auto;
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      padding: 48px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
     .action-bar {
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto 20px auto;
       display: flex;
       justify-content: space-between;
@@ -42,7 +35,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
+      padding: 8px 18px;
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
@@ -58,21 +51,29 @@
       border-color: var(--text);
     }
     .btn-primary {
-      background: var(--text);
+      background: var(--accent);
       color: #FFFFFF;
-      border-color: var(--text);
+      border-color: var(--accent);
     }
     .btn-primary:hover {
-      background: var(--accent);
-      border-color: var(--accent);
+      background: #1D4ED8;
+      border-color: #1D4ED8;
+    }
+    .resume-container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
     header {
       border-bottom: 2px solid var(--text);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
+      padding-bottom: 22px;
+      margin-bottom: 24px;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 600;
       letter-spacing: -0.02em;
     }
@@ -93,12 +94,13 @@
     .contact-line a {
       color: var(--text);
       text-decoration: none;
+      font-weight: 500;
     }
     .contact-line a:hover {
       color: var(--accent);
     }
     section {
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
     h2 {
       font-size: 1.05rem;
@@ -116,7 +118,7 @@
       line-height: 1.7;
     }
     .skill-category {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       font-size: 0.9rem;
     }
     .skill-label {
@@ -133,24 +135,28 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      flex-wrap: wrap;
     }
     .item-title {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
+    }
+    .item-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .item-title a:hover {
+      color: var(--accent);
     }
     .item-meta {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-    }
-    .item-desc {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-top: 4px;
+      font-family: monospace;
     }
     ul.item-bullets {
       padding-left: 20px;
       margin-top: 6px;
-      font-size: 0.875rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
     }
     ul.item-bullets li {
@@ -181,34 +187,50 @@
   <div class="resume-container">
     <header>
       <h1>Hussain Afroz Khan</h1>
-      <div class="subtitle">AI / Machine Learning Engineer</div>
+      <div class="subtitle">AI & Machine Learning Engineer</div>
       <div class="contact-line">
         <span>Email: <a href="mailto:khanhussainafroz@gmail.com">khanhussainafroz@gmail.com</a></span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/hussain-afroz-khan-5b0a012b5" target="_blank" rel="noopener">linkedin.com/in/hussain-afroz-khan-5b0a012b5</a></span>
         <span>GitHub: <a href="https://github.com/hUSsAin976-tech" target="_blank" rel="noopener">github.com/hUSsAin976-tech</a></span>
-        <span>Portfolio: <a href="https://github.com/hUSsAin976-tech/Hussain-Portfolio" target="_blank" rel="noopener">Hussain-Portfolio</a></span>
       </div>
     </header>
 
     <section>
-      <h2>Professional Summary</h2>
-      <p class="summary-text">
-        AI/ML Engineer focused on applied machine learning, neural architectures, and scalable data pipeline engineering. Dedicated to an "honest framing" engineering philosophy—prioritizing reproducible benchmarks, latency optimization, and practical business impact over unverified industry hype. Experienced in developing computer vision models, LLM orchestration frameworks, and real-time predictive analytics systems.
-      </p>
+      <h2>Education & Experience</h2>
+      <div class="item-entry">
+        <div class="item-header">
+          <span class="item-title">Bachelor of Science in Artificial Intelligence (BS AI)</span>
+          <span class="item-meta">NIIT, Lahore</span>
+        </div>
+        <p class="summary-text" style="font-size: 0.88rem; margin-top: 2px;">
+          Focus: Deep Neural Networks, Time-Series Forecasting, Pattern Recognition, Algorithmic Decision Systems.
+        </p>
+      </div>
+
+      <div class="item-entry">
+        <div class="item-header">
+          <span class="item-title">Machine Learning Intern</span>
+          <span class="item-meta">FlyRank</span>
+        </div>
+        <p class="summary-text" style="font-size: 0.88rem; margin-top: 2px;">
+          Researched and built applied machine learning pipelines, exploratory data analysis workflows, and model evaluations.
+        </p>
+      </div>
     </section>
 
     <section>
       <h2>Technical Capabilities</h2>
       <div class="skill-category">
-        <span class="skill-label">Machine Learning & Deep Learning:</span>
-        <span class="skill-items">PyTorch, TensorFlow, Scikit-Learn, Hugging Face Transformers, OpenCV, FAISS, ONNX, Model Quantization.</span>
+        <span class="skill-label">Machine Learning & Modeling:</span>
+        <span class="skill-items">Deep LSTM Networks, Linear Regression, PCA Dimensionality Reduction, Scikit-Learn, TensorFlow/Keras, Time-Series Modeling, Supervised Classification.</span>
       </div>
       <div class="skill-category">
-        <span class="skill-label">Systems & Cloud Architecture:</span>
-        <span class="skill-items">Python, Git, Docker, Google Cloud Platform (GCP), BigQuery ML, Linux, CI/CD, REST APIs, Netlify.</span>
+        <span class="skill-label">Languages & Libraries:</span>
+        <span class="skill-items">Python 3.11, NumPy, Pandas, Matplotlib, Seaborn, Tkinter GUI, HTML5, CSS3, JavaScript, Git.</span>
       </div>
       <div class="skill-category">
-        <span class="skill-label">Core Specializations:</span>
-        <span class="skill-items">Multi-Modal Retrieval, Time-Series Anomaly Detection, Autonomous Agent Reasoning, Low-Latency Edge Inference.</span>
+        <span class="skill-label">Engineering Methodology:</span>
+        <span class="skill-items">Honest framing, empirical benchmarking, residual analysis (RMSE, MAE, R²), ROC-AUC curves, confusion matrix diagnostics.</span>
       </div>
     </section>
 
@@ -217,45 +239,56 @@
       
       <div class="item-entry">
         <div class="item-header">
-          <span class="item-title">Multi-Modal Vision-Language Retrieval Pipeline</span>
-          <span class="item-meta">PyTorch · FAISS · Vector Search</span>
+          <span class="item-title"><a href="https://github.com/hUSsAin976-tech/Stock-price-Forecasting-Project-Using-LSTM-and-Linear-Regression" target="_blank" rel="noopener">Stock Price Forecasting (LSTM & Linear Regression)</a></span>
+          <span class="item-meta">Deep Learning · Keras · Time-Series</span>
         </div>
         <ul class="item-bullets">
-          <li>Architected a dual-encoder retrieval engine achieving sub-45ms cross-modal query latency over 1M+ visual embeddings.</li>
-          <li>Integrated HNSW indexing and contrastive learning loss, increasing top-5 retrieval accuracy by 14.2%.</li>
+          <li>Constructed a 4-layer deep LSTM neural network alongside a linear regression baseline for financial price forecasting.</li>
+          <li>Implemented user-selected Open vs. Close price prediction targets and evaluated models with RMSE, MAE, and R² scores.</li>
         </ul>
       </div>
 
       <div class="item-entry">
         <div class="item-header">
-          <span class="item-title">Real-Time Predictive Telemetry & Anomaly Detector</span>
-          <span class="item-meta">Time-Series Transformers · BigQuery · Python</span>
+          <span class="item-title"><a href="https://github.com/hUSsAin976-tech/Intelligent-Password-Strength-Checker" target="_blank" rel="noopener">Intelligent Password Strength Checker</a></span>
+          <span class="item-meta">Security ML · RockYou 100k+ Dataset</span>
         </div>
         <ul class="item-bullets">
-          <li>Engineered streaming anomaly detection pipeline processing sensor telemetry with 98.4% F1-score.</li>
-          <li>Designed automated alert triggers and predictive degradation horizons, reducing system downtime.</li>
+          <li>Trained on over 100,000+ real-world leaked passwords from the RockYou dataset to analyze vulnerability patterns and calculate entropy scores.</li>
+          <li>Developed an interactive GUI to evaluate password resilience against dictionary attacks in real-time.</li>
         </ul>
       </div>
 
       <div class="item-entry">
         <div class="item-header">
-          <span class="item-title">Autonomous Agent Tool Orchestration Framework</span>
-          <span class="item-meta">LLMs · Python · Tool Calling</span>
+          <span class="item-title"><a href="https://github.com/hUSsAin976-tech/Diabetes-Prediction-Using-Clinical-Dataset" target="_blank" rel="noopener">Clinical Diabetes Prediction Classifier</a></span>
+          <span class="item-meta">Supervised ML · Pima Indians Dataset</span>
         </div>
         <ul class="item-bullets">
-          <li>Constructed deterministic execution harness for tool-augmented language models with structured JSON schema outputs.</li>
-          <li>Built stateful memory and rollback safeguards, achieving 99.1% execution reliability on multi-step workflows.</li>
+          <li>Trained and benchmarked 3 supervised classification algorithms on clinical health metrics.</li>
+          <li>Analyzed diagnostic accuracy using confusion matrices, precision-recall trade-offs, and ROC-AUC curves.</li>
         </ul>
       </div>
-    </section>
 
-    <section>
-      <h2>Engineering Principles</h2>
-      <ul class="item-bullets">
-        <li><strong>Measurable Benchmarks:</strong> Every model must be evaluated against standard test splits, latency budgets, and cost thresholds.</li>
-        <li><strong>Clean Data Infrastructure:</strong> High quality data movement and validation are the foundation of any reliable AI system.</li>
-        <li><strong>Simplicity First:</strong> Start with standard heuristics and linear baselines before adopting complex neural architectures.</li>
-      </ul>
+      <div class="item-entry">
+        <div class="item-header">
+          <span class="item-title"><a href="https://github.com/hUSsAin976-tech/AI-Driven-Career-Course-Advisory-Management-System" target="_blank" rel="noopener">AI-Driven Career & Course Advisory Management System</a></span>
+          <span class="item-meta">Python · Tkinter · Expert System</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Constructed an algorithmic recommendation engine in Python Tkinter to recommend tailored academic and career paths based on student input.</li>
+        </ul>
+      </div>
+
+      <div class="item-entry">
+        <div class="item-header">
+          <span class="item-title"><a href="https://github.com/hUSsAin976-tech/Dimensionality-Reduction-with-PCA" target="_blank" rel="noopener">Dimensionality Reduction with PCA Pipeline</a></span>
+          <span class="item-meta">Unsupervised ML · Scree Plots</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Executed full PCA workflow: standardization, 2-component projection, scree plot variance explanation, and reconstruction error quantification.</li>
+        </ul>
+      </div>
     </section>
   </div>
 </body>

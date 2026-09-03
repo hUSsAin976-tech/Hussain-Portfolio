@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hussain Afroz Khan — AI/ML Engineer & Systems</title>
-  <meta name="description" content="AI & Machine Learning Engineer portfolio of Hussain Afroz Khan. Clean, honest engineering, high-performance neural systems, and reproducible benchmarks.">
+  <meta name="description" content="Portfolio of Hussain Afroz Khan — AI & Machine Learning Engineer studying BS Artificial Intelligence at NIIT Lahore. Real projects, honest framing, and empirical benchmarks.">
   
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23111111'/><rect x='0' y='82' width='100' height='18' fill='%232563EB'/><text x='50' y='60' font-family='sans-serif' font-size='50' font-weight='600' fill='white' text-anchor='middle'>H</text></svg>">
+  <!-- Favicon matching the requested logo (White H on Black with Blue Line) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111111'/><rect x='0' y='78' width='100' height='10' fill='%232563EB'/><text x='50' y='58' font-family='Arial' font-size='48' font-weight='700' fill='white' text-anchor='middle'>H</text></svg>">
   
-  <!-- Inter Font (400 & 600 only) -->
+  <!-- Inter Font (400 regular & 600 semibold only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -19,18 +19,26 @@
 </head>
 <body>
 
-  <!-- Top Sticky Navigation Bar -->
+  <!-- ====================================================================
+       NAVIGATION BAR (BLACK AS REQUESTED)
+       ==================================================================== -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
+      
+      <!-- Brand Logo with Black Background & Blue Line under H -->
       <a href="#home" class="brand" aria-label="Home">
-        <div class="brand-icon">H</div>
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#111111"/>
+          <rect x="0" y="78" width="100" height="10" fill="#2563EB"/>
+          <text x="50" y="58" font-family="'Inter', Arial, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">H</text>
+        </svg>
         <div class="brand-info">
           <span class="brand-name">Hussain Afroz Khan</span>
-          <span class="brand-tag">SYS_ID // HAK-0976 · AI/ML</span>
+          <span class="brand-tag">SYS_ID // HAK-0976 · BS AI @ NIIT</span>
         </div>
       </a>
 
-      <!-- Desktop & Mobile Navigation Links -->
+      <!-- Navigation Links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -61,94 +69,69 @@
 
   <main>
     <!-- ====================================================================
-         SECTION 01: HOME / HERO
+         SECTION 01: HOME / HERO WITH PHOTO AS WORKSTATION BACKDROP
          ==================================================================== -->
     <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-grid">
+      
+      <!-- Background Character Layer: Illustrated Avatar at Desk -->
+      <div class="hero-backdrop-container">
+        <img 
+          src="assets/hero-avatar.jpg" 
+          alt="Hussain Afroz Khan workstation illustration" 
+          class="hero-backdrop-img"
+          loading="eager"
+        >
+        <div class="hero-backdrop-gradient"></div>
+      </div>
+
+      <div class="container hero-content-wrapper">
+        <!-- Floating Interactive HUD Card in front of backdrop -->
+        <div class="hero-main-card corner-frame reveal-on-scroll">
           
-          <!-- Hero Text Content -->
-          <div class="hero-content">
-            <div class="hero-meta">
-              <span class="tech-badge">
-                <span class="status-dot"></span>
-                <span>SYSTEM STATUS: ONLINE // AVAILABLE</span>
-              </span>
-              <span class="tech-badge">
-                <span>SPEC // AI & ML SYSTEMS</span>
-              </span>
-            </div>
-
-            <h1 class="hero-title">
-              Building pragmatic machine learning systems with <span class="highlight">honest engineering</span>.
-            </h1>
-
-            <p class="hero-summary">
-              AI/ML engineer dedicated to high-efficiency modeling, low-latency inference pipelines, and reproducible benchmarks. Moving past marketing hype to build intelligence that works reliably in production.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn-primary">
-                <span>Explore Projects [SEC_02]</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#contact" class="btn-secondary">
-                <span>Initiate Contact</span>
-              </a>
-            </div>
-
-            <!-- Hero Engineering Telemetry -->
-            <div class="hero-telemetry">
-              <div class="telemetry-item">
-                <span class="telemetry-label">Primary Stack</span>
-                <span class="telemetry-val">PyTorch · Transformers · GCP</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Core Paradigm</span>
-                <span class="telemetry-val">Applied ML & Anomaly Detection</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Design Ethos</span>
-                <span class="telemetry-val">Honest Framing & Metrics</span>
-              </div>
-            </div>
+          <div class="hero-meta">
+            <span class="tech-badge">
+              <span class="status-dot"></span>
+              <span>SYSTEM STATUS: ONLINE // AVAILABLE</span>
+            </span>
+            <span class="tech-badge">
+              <span>BS AI @ NIIT LAHORE · ML @ FLYRANK</span>
+            </span>
           </div>
 
-          <!-- Hero Graphic Identity Dossier (Avatar Portrait) -->
-          <div class="hero-visual">
-            <div class="identity-card corner-frame">
-              <div class="identity-header">
-                <span>DOSSIER // PERS-ID: HAK-0976</span>
-                <span>LOC: KARACHI [UTC+5]</span>
-              </div>
+          <h1 class="hero-title">
+            Building pragmatic machine learning systems with <span class="highlight">honest engineering</span>.
+          </h1>
 
-              <div class="portrait-wrapper">
-                <img 
-                  src="assets/hero-avatar.jpg" 
-                  alt="Portrait illustration of Hussain Afroz Khan" 
-                  class="hero-avatar-img"
-                  width="560"
-                  height="373"
-                >
-                <div class="portrait-overlay-hud">
-                  <div>
-                    <div class="hud-title">Hussain Afroz Khan</div>
-                    <div class="hud-sub">AI & RESEARCH ENGINEER</div>
-                  </div>
-                  <div class="tech-badge">
-                    <span class="status-dot"></span>
-                    <span>ACTIVE</span>
-                  </div>
-                </div>
-              </div>
+          <p class="hero-summary">
+            AI/ML Engineer specializing in deep neural networks, time-series forecasting, and empirical data classification. Moving past ungrounded marketing hype to deliver reproducible, benchmark-proven architectures.
+          </p>
 
-              <div class="identity-footer">
-                <span>MODEL VER: 2026.09</span>
-                <span>GITHUB: @hUSsAin976-tech</span>
-              </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              <span>Explore Actual Projects [SEC_02]</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Initiate Contact</span>
+            </a>
+          </div>
+
+          <!-- Hero Telemetry HUD -->
+          <div class="hero-telemetry">
+            <div class="telemetry-item">
+              <span class="telemetry-label">Primary Specialization</span>
+              <span class="telemetry-val">Deep Learning & Applied ML</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Core Models</span>
+              <span class="telemetry-val">LSTM · PCA · Scikit-Learn</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Engineering Ethos</span>
+              <span class="telemetry-val">Empirical Benchmarks & Metrics</span>
             </div>
           </div>
 
@@ -157,231 +140,321 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 02: PROJECTS
+         SECTION 02: ACTUAL GITHUB PROJECTS (Cards with Scroll Animations)
          ==================================================================== -->
     <section class="projects" id="projects">
       <div class="container">
         
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <div class="section-meta">
-            <span>SEC_02 // SYSTEM BUILDS</span>
+            <span>SEC_02 // REPOSITORY BUILDS</span>
           </div>
-          <h2 class="section-title">Selected Engineering Projects</h2>
+          <h2 class="section-title">Actual Engineering Projects</h2>
           <p class="section-subtitle">
-            Rigorous engineering implementations evaluated against concrete latency, accuracy, and operational throughput metrics.
+            Authentic implementations from my GitHub repository (<a href="https://github.com/hUSsAin976-tech" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">@hUSsAin976-tech</a>), evaluating architectures, datasets, and standard regression & classification metrics.
           </p>
         </div>
 
         <div class="projects-grid">
           
-          <!-- Project 01 -->
-          <article class="project-card corner-frame">
+          <!-- Project 01: Stock Price Forecasting -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-1">
             <div class="project-card-header">
-              <span class="project-index">01 // SYS.VEC-SEARCH</span>
-              <span class="project-domain">Computer Vision & NLP</span>
+              <span class="project-index">01 // FORECASTING</span>
+              <span class="project-domain">Deep Learning / Finance</span>
             </div>
             <div class="project-card-body">
-              <h3 class="project-title">Multi-Modal Vision-Language Retrieval Pipeline</h3>
+              <h3 class="project-title">Stock Price Forecasting (LSTM vs Linear Regression)</h3>
               <p class="project-desc">
-                High-throughput cross-modal semantic search engine pairing dual deep neural encoders with hierarchical navigable small-world (HNSW) vector indexing for instantaneous visual matching.
+                Comparative analysis of standard Linear Regression against a 4-Layer Deep LSTM neural network. Users choose runtime target (Open vs. Close price) with comprehensive error evaluations.
               </p>
               
               <div class="project-specs">
                 <div class="spec-item">
-                  <span class="spec-name">Latency Benchmark</span>
-                  <span class="spec-value highlight">&lt; 42ms / query</span>
+                  <span class="spec-name">Model Arch</span>
+                  <span class="spec-value highlight">4-Layer LSTM</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Index Capacity</span>
-                  <span class="spec-value">1.2M+ Vectors</span>
+                  <span class="spec-name">Baseline</span>
+                  <span class="spec-value">Linear Regression</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Precision@5</span>
-                  <span class="spec-value">94.8% Top-K</span>
+                  <span class="spec-name">Metrics</span>
+                  <span class="spec-value">RMSE / MAE / R²</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Quantization</span>
-                  <span class="spec-value">FP16 / Int8</span>
-                </div>
-              </div>
-
-              <div class="stack-tags">
-                <span class="stack-tag">PyTorch</span>
-                <span class="stack-tag">FAISS</span>
-                <span class="stack-tag">Transformers</span>
-                <span class="stack-tag">FastAPI</span>
-                <span class="stack-tag">Docker</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <span class="mono-tag">STATUS: BENCHMARKED</span>
-              <div class="project-links">
-                <a href="https://github.com/hUSsAin976-tech/Hussain-Portfolio" target="_blank" rel="noopener" class="project-link">
-                  <span>Source Repo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 02 -->
-          <article class="project-card corner-frame">
-            <div class="project-card-header">
-              <span class="project-index">02 // SYS.TELEMETRY</span>
-              <span class="project-domain">Time-Series & Cloud ML</span>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Real-Time Predictive Telemetry & Anomaly Detector</h3>
-              <p class="project-desc">
-                Continuous temporal anomaly detection engine built for streaming telemetry data. Utilizes temporal attention networks to detect sensor drift and predictive fault signatures before outages occur.
-              </p>
-              
-              <div class="project-specs">
-                <div class="spec-item">
-                  <span class="spec-name">F1 Score</span>
-                  <span class="spec-value highlight">98.4% Accuracy</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">Ingestion Rate</span>
-                  <span class="spec-value">15k events/sec</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">Early Warning</span>
-                  <span class="spec-value">~18 min lead</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">Storage Tier</span>
-                  <span class="spec-value">GCP BigQuery</span>
+                  <span class="spec-name">Target</span>
+                  <span class="spec-value">Open & Close</span>
                 </div>
               </div>
 
               <div class="stack-tags">
                 <span class="stack-tag">Python</span>
-                <span class="stack-tag">BigQuery ML</span>
-                <span class="stack-tag">Scikit-Learn</span>
-                <span class="stack-tag">Cloud Pub/Sub</span>
+                <span class="stack-tag">LSTM / Keras</span>
+                <span class="stack-tag">Pandas</span>
+                <span class="stack-tag">Matplotlib</span>
                 <span class="stack-tag">Time-Series</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <span class="mono-tag">STATUS: PRODUCTION</span>
-              <div class="project-links">
-                <a href="https://github.com/hUSsAin976-tech/Hussain-Portfolio" target="_blank" rel="noopener" class="project-link">
-                  <span>Source Repo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/Stock-price-Forecasting-Project-Using-LSTM-and-Linear-Regression" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
           </article>
 
-          <!-- Project 03 -->
-          <article class="project-card corner-frame">
+          <!-- Project 02: Intelligent Password Strength Checker -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-2">
             <div class="project-card-header">
-              <span class="project-index">03 // SYS.AGENT-RUN</span>
-              <span class="project-domain">Agentic AI & LLMs</span>
+              <span class="project-index">02 // CYBERSECURITY</span>
+              <span class="project-domain">Pattern Recognition</span>
             </div>
             <div class="project-card-body">
-              <h3 class="project-title">Autonomous Agent Tool Orchestration Framework</h3>
+              <h3 class="project-title">Intelligent Password Strength Checker</h3>
               <p class="project-desc">
-                Deterministic agent execution framework equipped with typed JSON tool calling, self-correcting evaluation loops, and rollback capabilities for robust multi-step research and code tasks.
+                Interactive security & machine learning implementation trained on over 100,000+ real-world leaked passwords from the industry RockYou Dataset to detect vulnerabilities and evaluate entropy.
               </p>
               
               <div class="project-specs">
                 <div class="spec-item">
-                  <span class="spec-name">Tool Reliability</span>
-                  <span class="spec-value highlight">99.1% Valid Schemas</span>
+                  <span class="spec-name">Dataset</span>
+                  <span class="spec-value highlight">RockYou (100k+)</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Context Window</span>
-                  <span class="spec-value">Dynamic Pruning</span>
+                  <span class="spec-name">Analysis</span>
+                  <span class="spec-value">Entropy & N-Gram</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Recovery Loop</span>
-                  <span class="spec-value">&lt; 2 retries avg</span>
+                  <span class="spec-name">Interface</span>
+                  <span class="spec-value">Interactive GUI</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Safety Checks</span>
-                  <span class="spec-value">Strict Sandboxing</span>
+                  <span class="spec-name">Evaluation</span>
+                  <span class="spec-value">Pattern Strength</span>
                 </div>
               </div>
 
               <div class="stack-tags">
-                <span class="stack-tag">LLM APIs</span>
                 <span class="stack-tag">Python</span>
-                <span class="stack-tag">JSON Schema</span>
-                <span class="stack-tag">Vector DB</span>
-                <span class="stack-tag">AsyncIO</span>
+                <span class="stack-tag">Scikit-Learn</span>
+                <span class="stack-tag">NLP Features</span>
+                <span class="stack-tag">Information Theory</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <span class="mono-tag">STATUS: ACTIVE RESEARCH</span>
-              <div class="project-links">
-                <a href="https://github.com/hUSsAin976-tech/Hussain-Portfolio" target="_blank" rel="noopener" class="project-link">
-                  <span>Source Repo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/Intelligent-Password-Strength-Checker" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
           </article>
 
-          <!-- Project 04 -->
-          <article class="project-card corner-frame">
+          <!-- Project 03: Diabetes Prediction Clinical Dataset -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-3">
             <div class="project-card-header">
-              <span class="project-index">04 // SYS.EDGE-AUDIO</span>
-              <span class="project-domain">Edge Computing & Optimization</span>
+              <span class="project-index">03 // HEALTHCARE ML</span>
+              <span class="project-domain">Supervised Classification</span>
             </div>
             <div class="project-card-body">
-              <h3 class="project-title">Quantized Edge Neural Audio Classifier</h3>
+              <h3 class="project-title">Clinical Diabetes Prediction Classifier</h3>
               <p class="project-desc">
-                Lightweight convolutional-transformer model compressed for micro-power embedded targets, performing real-time spectral audio event classification with minimal compute footprint.
+                End-to-end clinical machine learning pipeline applied to the Pima Indians dataset. Three distinct classification models were trained and benchmarked using confusion matrices and ROC curves.
               </p>
               
               <div class="project-specs">
                 <div class="spec-item">
-                  <span class="spec-name">Model Footprint</span>
-                  <span class="spec-value highlight">4.2 MB Quantized</span>
+                  <span class="spec-name">Models Benchmarked</span>
+                  <span class="spec-value highlight">3 Classifiers</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Inference Time</span>
-                  <span class="spec-value">11ms on CPU</span>
+                  <span class="spec-name">Dataset</span>
+                  <span class="spec-value">Pima Indians</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Power Draw</span>
-                  <span class="spec-value">&lt; 1.5 Watts</span>
+                  <span class="spec-name">Diagnostic Curves</span>
+                  <span class="spec-value">ROC-AUC & Matrix</span>
                 </div>
                 <div class="spec-item">
-                  <span class="spec-name">Compression</span>
-                  <span class="spec-value">4x Reduction</span>
+                  <span class="spec-name">Cleaning</span>
+                  <span class="spec-value">Zero-Imputation</span>
                 </div>
               </div>
 
               <div class="stack-tags">
-                <span class="stack-tag">ONNX Runtime</span>
-                <span class="stack-tag">TensorFlow Lite</span>
-                <span class="stack-tag">DSP / Mel-Spectra</span>
-                <span class="stack-tag">C++ / Python</span>
+                <span class="stack-tag">Scikit-Learn</span>
+                <span class="stack-tag">Pandas</span>
+                <span class="stack-tag">Seaborn</span>
+                <span class="stack-tag">Clinical EDA</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <span class="mono-tag">STATUS: VALIDATED</span>
-              <div class="project-links">
-                <a href="https://github.com/hUSsAin976-tech/Hussain-Portfolio" target="_blank" rel="noopener" class="project-link">
-                  <span>Source Repo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/Diabetes-Prediction-Using-Clinical-Dataset" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 04: AI-Driven Career & Course Advisory -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-4">
+            <div class="project-card-header">
+              <span class="project-index">04 // RECOMMENDATION</span>
+              <span class="project-domain">Expert Systems & GUI</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">AI-Driven Career & Course Advisory System</h3>
+              <p class="project-desc">
+                Interactive advisory system engineered in Python using Tkinter. Ingests academic records and student preferences to recommend optimal career trajectories and course pathways.
+              </p>
+              
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-name">Engine</span>
+                  <span class="spec-value highlight">Rule & Heuristic AI</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Interface</span>
+                  <span class="spec-value">Python Tkinter</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Output</span>
+                  <span class="spec-value">Career Roadmap</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Application</span>
+                  <span class="spec-value">Student Guidance</span>
+                </div>
               </div>
+
+              <div class="stack-tags">
+                <span class="stack-tag">Python</span>
+                <span class="stack-tag">Tkinter GUI</span>
+                <span class="stack-tag">Algorithms</span>
+                <span class="stack-tag">User Profiling</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/AI-Driven-Career-Course-Advisory-Management-System" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 05: Dimensionality Reduction with PCA -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-5">
+            <div class="project-card-header">
+              <span class="project-index">05 // UNSUPERVISED ML</span>
+              <span class="project-domain">Feature Engineering</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Dimensionality Reduction with PCA Pipeline</h3>
+              <p class="project-desc">
+                Mathematical implementation of Principal Component Analysis: standardization, 2-component projection, scree plot variance explanation, scatter clustering, and inverse transform reconstruction error.
+              </p>
+              
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-name">Components</span>
+                  <span class="spec-value highlight">2D Projection</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Diagnostics</span>
+                  <span class="spec-value">Scree Variance</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Reconstruction</span>
+                  <span class="spec-value">Loss Measured</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Transforms</span>
+                  <span class="spec-value">Inverse Map</span>
+                </div>
+              </div>
+
+              <div class="stack-tags">
+                <span class="stack-tag">PCA</span>
+                <span class="stack-tag">NumPy</span>
+                <span class="stack-tag">Scikit-Learn</span>
+                <span class="stack-tag">Data Visualization</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/Dimensionality-Reduction-with-PCA" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 06: FlyRank ML Internship Work -->
+          <article class="project-card corner-frame reveal-on-scroll stagger-6">
+            <div class="project-card-header">
+              <span class="project-index">06 // INDUSTRY INTERNSHIP</span>
+              <span class="project-domain">Applied ML @ FlyRank</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Machine Learning Engineering at FlyRank</h3>
+              <p class="project-desc">
+                Applied machine learning pipelines, research notebooks, and automated evaluation workflows developed during my Machine Learning internship at FlyRank.
+              </p>
+              
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-name">Company</span>
+                  <span class="spec-value highlight">FlyRank</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Role</span>
+                  <span class="spec-value">ML Intern</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Environment</span>
+                  <span class="spec-value">Jupyter / PyTorch</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">Focus</span>
+                  <span class="spec-value">Data & Modeling</span>
+                </div>
+              </div>
+
+              <div class="stack-tags">
+                <span class="stack-tag">Applied ML</span>
+                <span class="stack-tag">Data Pipelines</span>
+                <span class="stack-tag">EDA</span>
+                <span class="stack-tag">Model Testing</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="mono-tag">GITHUB REPO</span>
+              <a href="https://github.com/hUSsAin976-tech/ML-internship-at-FlyRank" target="_blank" rel="noopener" class="project-link">
+                <span>View Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
           </article>
 
@@ -390,115 +463,113 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 03: ABOUT
+         SECTION 03: ABOUT (Real Bio & Honest Framing)
          ==================================================================== -->
     <section class="about" id="about">
       <div class="container">
         
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <div class="section-meta">
-            <span>SEC_03 // SPECIFICATION & IDENTITY</span>
+            <span>SEC_03 // SPECIFICATION & PROFILE</span>
           </div>
-          <h2 class="section-title">Honest Framing & Engineering Dossier</h2>
+          <h2 class="section-title">Profile & Engineering Philosophy</h2>
           <p class="section-subtitle">
-            An engineering perspective that respects empirical evidence, clean infrastructure, and computational pragmatism over ungrounded claims.
+            Studying BS Artificial Intelligence at NIIT Lahore and applying machine learning in industry. Committed to honest engineering: transparency, measurable baselines, and clean pipelines.
           </p>
         </div>
 
         <div class="about-grid">
           
-          <!-- Narrative & Philosophy -->
-          <div class="about-dossier">
+          <!-- Narrative & Real Background -->
+          <div class="about-dossier reveal-on-scroll stagger-1">
             <p class="dossier-statement">
-              "Great machine learning systems aren't defined by model size alone, but by predictable behavior, clean data contracts, and uncompromising latency efficiency."
+              "True value in machine learning comes from rigorous baselines, disciplined evaluation, and reproducible pipelines — not artificial buzzwords."
             </p>
 
             <p class="about-text">
-              I am an AI/ML engineer focused on building practical, production-grade intelligence. My work centers on the intersection of deep learning architectures, scalable cloud infrastructure, and rigorous empirical validation.
+              I am <strong>Hussain Afroz Khan</strong>, an AI/ML Engineer currently pursuing my <strong>BS in Artificial Intelligence at NIIT, Lahore</strong>, and working on machine learning development as an <strong>ML Intern at FlyRank</strong>.
             </p>
 
             <p class="about-text">
-              I favor transparent evaluation protocols over vanity metrics: understanding failure modes, tracking data drift, quantifying inference costs, and selecting simpler architectures whenever they meet performance objectives.
+              My engineering approach is grounded in "honest framing." Instead of treating machine learning like a black box, I prioritize clear error metrics (RMSE, MAE, R², ROC-AUC, confusion matrices), algorithmic efficiency, and comparing complex neural models against simpler linear baselines before deployment.
             </p>
 
             <div class="philosophy-grid">
               <div class="philosophy-card corner-frame">
                 <div class="philosophy-num">PRIN_01</div>
                 <h4 class="philosophy-title">Empirical Baselines</h4>
-                <p class="philosophy-desc">Always test against deterministic baselines before committing complex neural architectures.</p>
+                <p class="philosophy-desc">Benchmarking LSTM and neural networks directly against linear models to measure true added value.</p>
               </div>
 
               <div class="philosophy-card corner-frame">
                 <div class="philosophy-num">PRIN_02</div>
-                <h4 class="philosophy-title">Clean Data Contracts</h4>
-                <p class="philosophy-desc">Data hygiene, schema validations, and drift monitors outweigh model complexity every time.</p>
+                <h4 class="philosophy-title">Real-World Datasets</h4>
+                <p class="philosophy-desc">Training on authentic security logs (RockYou 100k+) and clinical data (Pima Indians) with careful data cleaning.</p>
               </div>
 
               <div class="philosophy-card corner-frame">
                 <div class="philosophy-num">PRIN_03</div>
-                <h4 class="philosophy-title">Latency & Budget</h4>
-                <p class="philosophy-desc">Inference speed and memory footprints must be treated as first-class architectural constraints.</p>
+                <h4 class="philosophy-title">Disciplined Evaluation</h4>
+                <p class="philosophy-desc">Tracking ROC curves, reconstruction errors, scree variance, and diagnostic confusion matrices.</p>
               </div>
 
               <div class="philosophy-card corner-frame">
                 <div class="philosophy-num">PRIN_04</div>
-                <h4 class="philosophy-title">Reproducibility</h4>
-                <p class="philosophy-desc">Deterministic seeds, versioned training pipelines, and documented artifact checkpoints.</p>
+                <h4 class="philosophy-title">Reproducible Code</h4>
+                <p class="philosophy-desc">Open-source documentation on GitHub with clean notebook steps and verifiable findings.</p>
               </div>
             </div>
           </div>
 
-          <!-- Tech Capabilities Matrix -->
-          <div class="tech-capabilities corner-frame">
+          <!-- Capabilities Matrix -->
+          <div class="tech-capabilities corner-frame reveal-on-scroll stagger-2">
             <div class="capabilities-header">
               <h3 class="capabilities-title">Capabilities Matrix</h3>
-              <span class="mono-tag">AUDIT_PASSED</span>
+              <span class="mono-tag">NIIT // AI-SPEC</span>
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title">01 // Deep Learning & Frameworks</span>
+              <span class="tech-group-title">01 // Machine Learning & Neural Nets</span>
               <div class="tech-chips">
-                <span class="tech-chip">PyTorch</span>
-                <span class="tech-chip">TensorFlow</span>
-                <span class="tech-chip">Hugging Face</span>
+                <span class="tech-chip">Deep LSTM</span>
+                <span class="tech-chip">Linear Regression</span>
+                <span class="tech-chip">PCA Reduction</span>
                 <span class="tech-chip">Scikit-Learn</span>
-                <span class="tech-chip">OpenCV</span>
-                <span class="tech-chip">FAISS</span>
-                <span class="tech-chip">ONNX</span>
+                <span class="tech-chip">TensorFlow / Keras</span>
+                <span class="tech-chip">Classification</span>
+                <span class="tech-chip">Time-Series</span>
               </div>
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title">02 // Cloud & Infrastructure</span>
+              <span class="tech-group-title">02 // Languages & Scientific Stack</span>
               <div class="tech-chips">
-                <span class="tech-chip">Google Cloud (GCP)</span>
-                <span class="tech-chip">BigQuery ML</span>
-                <span class="tech-chip">Docker</span>
-                <span class="tech-chip">Linux</span>
-                <span class="tech-chip">Git / GitHub</span>
-                <span class="tech-chip">Netlify CI/CD</span>
-                <span class="tech-chip">REST APIs</span>
+                <span class="tech-chip">Python 3.11</span>
+                <span class="tech-chip">NumPy</span>
+                <span class="tech-chip">Pandas</span>
+                <span class="tech-chip">Matplotlib</span>
+                <span class="tech-chip">Seaborn</span>
+                <span class="tech-chip">Jupyter Notebooks</span>
+                <span class="tech-chip">HTML / CSS / JS</span>
               </div>
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title">03 // Languages & Scientific Computing</span>
+              <span class="tech-group-title">03 // Frameworks & Systems</span>
               <div class="tech-chips">
-                <span class="tech-chip">Python 3.11+</span>
-                <span class="tech-chip">NumPy / Pandas</span>
-                <span class="tech-chip">SQL / BigQuery</span>
-                <span class="tech-chip">HTML5 / CSS / JS</span>
-                <span class="tech-chip">Bash / PowerShell</span>
+                <span class="tech-chip">Tkinter GUI</span>
+                <span class="tech-chip">Git & GitHub</span>
+                <span class="tech-chip">Netlify Edge</span>
+                <span class="tech-chip">Data Preprocessing</span>
+                <span class="tech-chip">Feature Engineering</span>
               </div>
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title">04 // Core Disciplines</span>
+              <span class="tech-group-title">04 // Education & Industry Experience</span>
               <div class="tech-chips">
-                <span class="tech-chip">Computer Vision</span>
-                <span class="tech-chip">Time-Series Forecasting</span>
-                <span class="tech-chip">Agent Tool Orchestration</span>
-                <span class="tech-chip">Model Quantization</span>
+                <span class="tech-chip">BS Artificial Intelligence (NIIT)</span>
+                <span class="tech-chip">ML Intern @ FlyRank</span>
               </div>
             </div>
 
@@ -510,26 +581,27 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 04: CONTACT
+         SECTION 04: CONTACT (With LinkedIn & Direct Channels)
          ==================================================================== -->
     <section class="contact" id="contact">
       <div class="container">
         
-        <div class="section-header">
+        <div class="section-header reveal-on-scroll">
           <div class="section-meta">
-            <span>SEC_04 // TRANSMISSION & COMMUNICATIONS</span>
+            <span>SEC_04 // COMMUNICATIONS</span>
           </div>
           <h2 class="section-title">Initiate Contact</h2>
           <p class="section-subtitle">
-            Open for research collaborations, engineering roles, and pragmatic AI consulting. Direct response within 24 operational hours.
+            Open for machine learning engineering opportunities, research collaborations, and applied AI initiatives.
           </p>
         </div>
 
         <div class="contact-grid">
           
-          <!-- Contact Info & Quick Channels -->
-          <div class="contact-info">
+          <!-- Contact Info & Social Profiles -->
+          <div class="contact-info reveal-on-scroll stagger-1">
             <div class="contact-card corner-frame">
+              
               <div class="contact-channel">
                 <span class="channel-label">ELECTRONIC MAIL</span>
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
@@ -538,15 +610,24 @@
                 </div>
               </div>
 
+              <!-- LinkedIn Profile Added As Requested -->
               <div class="contact-channel">
-                <span class="channel-label">VERSION CONTROL / GITHUB</span>
-                <a href="https://github.com/hUSsAin976-tech" target="_blank" rel="noopener" class="channel-value">
-                  <span>github.com/hUSsAin976-tech</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                <span class="channel-label">LINKEDIN PROFESSIONAL NETWORK</span>
+                <a href="https://www.linkedin.com/in/hussain-afroz-khan-5b0a012b5" target="_blank" rel="noopener" class="channel-value">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                   </svg>
+                  <span>linkedin.com/in/hussain-afroz-khan-5b0a012b5</span>
+                </a>
+              </div>
+
+              <div class="contact-channel">
+                <span class="channel-label">GITHUB REPOSITORIES</span>
+                <a href="https://github.com/hUSsAin976-tech" target="_blank" rel="noopener" class="channel-value">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span>github.com/hUSsAin976-tech</span>
                 </a>
               </div>
 
@@ -556,29 +637,24 @@
                   <span>hUSsAin976-tech/Hussain-Portfolio</span>
                 </a>
               </div>
-
-              <div class="contact-channel">
-                <span class="channel-label">NETLIFY DEPLOYMENT ID</span>
-                <span class="mono-tag" style="color: var(--text-primary); word-break: break-all;">c79db33f-d200-4d6e-a310-263229d0eb4c</span>
-              </div>
             </div>
 
             <div class="tech-badge" style="justify-content: center; padding: 12px;">
               <span class="status-dot"></span>
-              <span>AVAILABILITY: OPEN FOR ROLES & COLLABORATION</span>
+              <span>STATUS: OPEN FOR AI/ML ROLES & RESEARCH</span>
             </div>
           </div>
 
-          <!-- Interactive Contact Form -->
-          <div class="terminal-form corner-frame">
+          <!-- Contact Message Form -->
+          <div class="terminal-form corner-frame reveal-on-scroll stagger-2">
             <form id="contactForm">
               <div class="form-group">
-                <label class="form-label" for="senderName">Identifier / Name</label>
+                <label class="form-label" for="senderName">Your Name / Organization</label>
                 <input class="form-input" type="text" id="senderName" required placeholder="e.g. Alex Mercer">
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="senderEmail">Return Transmission / Email</label>
+                <label class="form-label" for="senderEmail">Your Email Address</label>
                 <input class="form-input" type="email" id="senderEmail" required placeholder="name@company.com">
               </div>
 
@@ -586,15 +662,15 @@
                 <label class="form-label" for="inquiryType">Domain Classification</label>
                 <select class="form-input" id="inquiryType">
                   <option value="engineering">AI / ML Engineering Role</option>
-                  <option value="research">Research Collaboration</option>
-                  <option value="consulting">System Architecture Consulting</option>
-                  <option value="other">General Dispatch</option>
+                  <option value="internship">Research / Internship Inquiry</option>
+                  <option value="project">Machine Learning Project Collaboration</option>
+                  <option value="general">General Transmission</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="messagePayload">Payload / Message</label>
-                <textarea class="form-textarea" id="messagePayload" required placeholder="Detail the scope of work, technical requirements, or inquiry..."></textarea>
+                <textarea class="form-textarea" id="messagePayload" required placeholder="Share the project scope, technical requirements, or opportunity..."></textarea>
               </div>
 
               <button type="submit" class="btn-submit">
@@ -614,16 +690,54 @@
   </main>
 
   <!-- ====================================================================
-       SITE FOOTER
+       SITE FOOTER (BLACK WITH GITHUB & LINKEDIN LOGO BUTTONS AS REQUESTED)
        ==================================================================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-meta">
-        <span>SYS_ID: HAK-0976</span>
-        <span>•</span>
-        <span id="epochTimestamp">UTC MONITOR</span>
-        <span>•</span>
-        <span>NETLIFY EDGE</span>
+      
+      <div class="footer-brand">
+        <!-- Logo SVG with Blue Line -->
+        <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#18181B"/>
+          <rect x="0" y="78" width="100" height="10" fill="#2563EB"/>
+          <text x="50" y="58" font-family="'Inter', Arial, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">H</text>
+        </svg>
+        <div class="footer-meta">
+          <span>HAK-0976</span>
+          <span>•</span>
+          <span id="epochTimestamp">UTC MONITOR</span>
+          <span>•</span>
+          <span>NETLIFY EDGE</span>
+        </div>
+      </div>
+
+      <!-- GitHub and LinkedIn Logo Buttons -->
+      <div class="footer-social-links">
+        <a 
+          href="https://github.com/hUSsAin976-tech" 
+          target="_blank" 
+          rel="noopener" 
+          class="footer-social-btn" 
+          aria-label="GitHub Profile"
+          title="GitHub: hUSsAin976-tech"
+        >
+          <svg viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <a 
+          href="https://www.linkedin.com/in/hussain-afroz-khan-5b0a012b5" 
+          target="_blank" 
+          rel="noopener" 
+          class="footer-social-btn" 
+          aria-label="LinkedIn Profile"
+          title="LinkedIn: Hussain Afroz Khan"
+        >
+          <svg viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
       </div>
 
       <div class="footer-copyright">

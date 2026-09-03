@@ -1,10 +1,29 @@
 // ==========================================================================
 // HUSSAIN AFROZ KHAN — PORTFOLIO CLIENT LOGIC
-// Identity Kit / Engineering Telemetry Interactions
+// Identity Kit / Reel-Style Scroll Reveals & Telemetry
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Navigation Toggle
+  // 1. Scroll-Triggered Card & Section Reveals (Instagram Reel Animation Style)
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        // Optional: keep observing or unobserve once revealed
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // 2. Mobile Navigation Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -13,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('active');
     });
 
-    // Close mobile nav when link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -21,15 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Navigation Active State on Scroll (Intersection Observer)
+  // 3. Navigation Active State on Scroll (Intersection Observer)
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-link');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0
-  };
 
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -44,11 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-  }, observerOptions);
+  }, {
+    root: null,
+    rootMargin: '-20% 0px -65% 0px',
+    threshold: 0
+  });
 
   sections.forEach(section => sectionObserver.observe(section));
 
-  // 3. Email Copy to Clipboard Functionality
+  // 4. Email Copy to Clipboard Functionality
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   const userEmail = 'khanhussainafroz@gmail.com';
 
@@ -57,21 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       try {
         await navigator.clipboard.writeText(userEmail);
-        showToast('✓ Email copied to clipboard: ' + userEmail);
+        showToast('✓ Copied email: ' + userEmail);
       } catch (err) {
-        // Fallback for older browsers
         const textarea = document.createElement('textarea');
         textarea.value = userEmail;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        showToast('✓ Email copied to clipboard: ' + userEmail);
+        showToast('✓ Copied email: ' + userEmail);
       }
     });
   }
 
-  // 4. Contact Form Transmission Feedback
+  // 5. Contact Form Transmission Simulation
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -79,23 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('.btn-submit');
       const originalText = submitBtn.innerHTML;
       
-      submitBtn.innerHTML = '<span>TRANSMITTING...</span>';
+      submitBtn.innerHTML = '<span>DISPATCHING TRANSMISSION...</span>';
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        submitBtn.innerHTML = '<span>✓ DISPATCH CONFIRMED</span>';
-        showToast('✓ Transmission dispatched successfully. Thank you!');
+        submitBtn.innerHTML = '<span>✓ TRANSMISSION DELIVERED</span>';
+        showToast('✓ Dispatch confirmed! Thank you for reaching out.');
         contactForm.reset();
 
         setTimeout(() => {
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
-        }, 3500);
+        }, 3200);
       }, 700);
     });
   }
 
-  // 5. System Clock & Timestamp Telemetry
+  // 6. Live UTC Telemetry Clock
   function updateTelemetryEpoch() {
     const epochDisplay = document.getElementById('epochTimestamp');
     if (epochDisplay) {
@@ -108,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateTelemetryEpoch, 1000);
 });
 
-// Toast notification helper
+// Helper: Toast notification popup
 function showToast(message) {
   let toast = document.getElementById('toastNotice');
   if (!toast) {
