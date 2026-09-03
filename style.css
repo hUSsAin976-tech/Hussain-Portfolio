@@ -1,12 +1,13 @@
 /* ==========================================================================
-   HUSSAIN AFROZ KHAN — PORTFOLIO DESIGN SYSTEM V3
-   Graded Transitions: White -> Midnight Blue/Black -> High-Tech Clean
+   HUSSAIN AFROZ KHAN — PORTFOLIO DESIGN SYSTEM V3.1
+   Graded Transitions: Seamless Hero -> Midnight Blue/Black -> High-Tech Clean
    Typography: Inter (400 regular, 600 semibold)
    Aesthetic: Instagram Reel Developer Showcase / Futuristic Identity Kit
    ========================================================================== */
 
 :root {
   --bg-white: #FAFAFA;
+  --bg-hero: #E6E7EB;
   --bg-surface: #FFFFFF;
   --bg-muted: #F4F4F5;
   --bg-dark: #07090E;
@@ -192,7 +193,7 @@ p, span, li, a, input, textarea, button {
 }
 
 /* ==========================================================================
-   NAVIGATION BAR (SOLID BLACK WITH BLUE UNDERLINE LOGO)
+   NAVIGATION BAR (SOLID BLACK WITH BLUE LINE LOGO)
    ========================================================================== */
 .site-header {
   position: sticky;
@@ -331,19 +332,20 @@ p, span, li, a, input, textarea, button {
 
 /* ==========================================================================
    SECTION 01: HOME / HERO
-   Photo as Background & Text Written Directly Over it (NO CARD!)
+   Seamless Background Color Match + 1.15x Scaled Image (NO CARD)
    ========================================================================== */
 .hero-showcase {
   position: relative;
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  background-color: #FAFAFA;
+  /* Exact color matching the avatar image background to eliminate any shade/box */
+  background: linear-gradient(100deg, #E5E6EA 0%, #E8E9EE 45%, #EBEAF0 100%);
   overflow: hidden;
   padding: 40px 0 80px 0;
 }
 
-/* Character Backdrop Layer */
+/* Character Backdrop Layer - 1.15x Enlarged */
 .hero-visual-backdrop {
   position: absolute;
   inset: 0;
@@ -352,28 +354,34 @@ p, span, li, a, input, textarea, button {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  overflow: hidden;
 }
 
 .hero-visual-backdrop img {
-  height: 94%;
+  height: 96%;
   width: auto;
-  max-width: 68%;
+  max-width: 76%;
   object-fit: contain;
   object-position: right bottom;
-  filter: contrast(1.03);
+  /* 1.15x Enlarged from current size as requested */
+  transform: scale(1.15);
+  transform-origin: right bottom;
+  /* Soft fade mask on the left edge so colors merge seamlessly */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 40%);
 }
 
-/* Seamless blend into white canvas so text on left is super readable */
+/* Soft blend gradient matching the exact background palette */
 .hero-blend-gradient {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(to right, #FAFAFA 40%, rgba(250, 250, 250, 0.88) 60%, rgba(250, 250, 250, 0.25) 85%, transparent 100%),
-    linear-gradient(to top, #FAFAFA 2%, transparent 20%);
+    linear-gradient(to right, #E5E6EA 42%, rgba(230, 231, 236, 0.88) 60%, rgba(235, 234, 240, 0.15) 85%, transparent 100%),
+    linear-gradient(to top, #E5E6EA 2%, transparent 20%);
   pointer-events: none;
 }
 
-/* Text Container directly on the canvas without any card */
+/* Text Plane directly on the canvas without any card */
 .hero-content-plane {
   position: relative;
   z-index: 3;
@@ -404,7 +412,7 @@ p, span, li, a, input, textarea, button {
 
 .hero-description {
   font-size: 1.15rem;
-  color: #475569;
+  color: #334155;
   line-height: 1.7;
   max-width: 580px;
 }
@@ -466,7 +474,7 @@ p, span, li, a, input, textarea, button {
   flex-wrap: wrap;
   gap: 24px;
   padding-top: 14px;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 0.85rem;
 }
 
@@ -478,13 +486,13 @@ p, span, li, a, input, textarea, button {
 .spec-node-title {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: #94A3B8;
+  color: #64748B;
   text-transform: uppercase;
 }
 
 .spec-node-val {
   font-weight: 600;
-  color: #1E293B;
+  color: #0F172A;
 }
 
 /* ==========================================================================
@@ -885,118 +893,16 @@ p, span, li, a, input, textarea, button {
 }
 
 /* ==========================================================================
-   SECTION 04: CONTACT (Focused Direct Channels, NO TRANSMISSION FORM)
-   ========================================================================== */
-.contact-section {
-  padding: 110px 0;
-  background: linear-gradient(180deg, #FAFAFA 0%, #080B12 100%);
-  border-top: 1px solid var(--border-color);
-}
-
-.contact-channels-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 20px;
-}
-
-.channel-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 36px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: var(--transition);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.03);
-}
-
-.channel-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.14);
-}
-
-.channel-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: #F1F5F9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.channel-card-title {
-  font-size: 1.25rem;
-  color: #111111;
-}
-
-.channel-card-text {
-  font-size: 0.92rem;
-  color: #64748B;
-  line-height: 1.6;
-}
-
-.btn-channel {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.btn-channel-primary {
-  background-color: var(--accent);
-  color: #FFFFFF;
-  border: 1px solid var(--accent);
-}
-
-.btn-channel-primary:hover {
-  background-color: var(--accent-hover);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
-}
-
-.btn-channel-dark {
-  background-color: #111111;
-  color: #FFFFFF;
-  border: 1px solid #111111;
-}
-
-.btn-channel-dark:hover {
-  background-color: #1E293B;
-  border-color: #1E293B;
-}
-
-.btn-channel-outline {
-  background-color: transparent;
-  color: #111111;
-  border: 1px solid #CBD5E1;
-}
-
-.btn-channel-outline:hover {
-  border-color: #111111;
-  background-color: #F8FAFC;
-}
-
-/* ==========================================================================
-   LARGE MULTI-LINE BLACK FOOTER (With Gmail Compose, GitHub, LinkedIn)
+   LARGE MULTI-LINE BLACK FOOTER (With "Contact Me", Gmail Compose, GitHub, LinkedIn)
    ========================================================================== */
 .footer-grand {
   background-color: #05070C;
   color: #F1F5F9;
   border-top: 1px solid #1E293B;
-  padding: 72px 0 36px 0;
+  padding: 76px 0 40px 0;
   position: relative;
   z-index: 10;
+  scroll-margin-top: var(--nav-height);
 }
 
 .footer-flow {
@@ -1034,13 +940,39 @@ p, span, li, a, input, textarea, button {
   color: #94A3B8;
 }
 
-/* Footer Line 2: Communication Hub with Gmail Compose */
+/* Footer Line 2: Communications Hub with "Contact Me" and Direct Gmail Compose */
 .footer-line-comms {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
+}
+
+.footer-contact-me-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-contact-me-label {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contact-me-label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
 }
 
 .footer-gmail-cta {
@@ -1318,9 +1250,6 @@ p, span, li, a, input, textarea, button {
 @media (max-width: 1100px) {
   .projects-deck {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .contact-channels-grid {
-    grid-template-columns: 1fr;
   }
 }
 
