@@ -10,37 +10,47 @@ const PROJECT_OUTPUTS = {
     domain: 'Deep Learning / Financial Time-Series',
     repo: 'https://github.com/hUSsAin976-tech/Stock-price-Forecasting-Project-Using-LSTM-and-Linear-Regression',
     dataset: 'Toyota 20-Year Daily Stock Data (toyota_stock_20y.csv)',
-    summary: 'Trained and evaluated a 4-layer Deep LSTM neural network against a Linear Regression baseline for runtime Open vs. Close price prediction.',
+    summary: 'Trained a 4-layer Deep LSTM against a Linear Regression baseline to predict Close price on a held-out test set (1,007 days). Linear Regression won on every metric — RMSE, MAE, and R².',
     metrics: [
-      { label: 'LSTM RMSE', value: '1.84' },
-      { label: 'LSTM MAE', value: '1.32' },
-      { label: 'LSTM R² Score', value: '0.942' },
-      { label: 'Linear Reg R²', value: '0.814' }
+      { label: 'Linear Reg R²', value: '0.9905' },
+      { label: 'LSTM R²', value: '0.9820' },
+      { label: 'LR RMSE', value: '3.05' },
+      { label: 'LSTM RMSE', value: '4.18' }
     ],
     chartHtml: `
-      <div style="font-family: monospace; font-size: 0.75rem; color: #94A3B8; margin-bottom: 8px;">EVALUATION WINDOW: ACTUAL VS PREDICTED CLOSE PRICE</div>
+      <div style="font-family: monospace; font-size: 0.75rem; color: #94A3B8; margin-bottom: 8px;">TEST SET METRICS: LINEAR REGRESSION vs LSTM (CLOSE PRICE)</div>
       <svg viewBox="0 0 700 240" style="width: 100%; height: auto; background: #070A10; border-radius: 4px; border: 1px solid rgba(255,255,255,0.06);">
         <!-- Grid lines -->
         <line x1="50" y1="30" x2="660" y2="30" stroke="#1E293B" stroke-dasharray="4"/>
         <line x1="50" y1="80" x2="660" y2="80" stroke="#1E293B" stroke-dasharray="4"/>
         <line x1="50" y1="130" x2="660" y2="130" stroke="#1E293B" stroke-dasharray="4"/>
         <line x1="50" y1="180" x2="660" y2="180" stroke="#1E293B" stroke-dasharray="4"/>
-        <!-- Axes -->
-        <line x1="50" y1="20" x2="50" y2="200" stroke="#475569"/>
+        <!-- Bars comparing RMSE and MAE (lower = better) -->
+        <text x="150" y="20" fill="#94A3B8" font-size="11" font-family="monospace" text-anchor="middle">RMSE</text>
+        <rect x="110" y="${200 - 3.05 * 30}" width="35" height="${3.05 * 30}" fill="#3B82F6"/>
+        <text x="128" y="195" fill="#93C5FD" font-size="10" font-family="monospace" text-anchor="middle">LR</text>
+        <rect x="155" y="${200 - 4.18 * 30}" width="35" height="${4.18 * 30}" fill="#F43F5E"/>
+        <text x="173" y="195" fill="#FCA5A5" font-size="10" font-family="monospace" text-anchor="middle">LSTM</text>
+
+        <text x="330" y="20" fill="#94A3B8" font-size="11" font-family="monospace" text-anchor="middle">MAE</text>
+        <rect x="290" y="${200 - 2.19 * 30}" width="35" height="${2.19 * 30}" fill="#3B82F6"/>
+        <text x="308" y="195" fill="#93C5FD" font-size="10" font-family="monospace" text-anchor="middle">LR</text>
+        <rect x="335" y="${200 - 3.00 * 30}" width="35" height="${3.00 * 30}" fill="#F43F5E"/>
+        <text x="353" y="195" fill="#FCA5A5" font-size="10" font-family="monospace" text-anchor="middle">LSTM</text>
+
+        <text x="530" y="20" fill="#94A3B8" font-size="11" font-family="monospace" text-anchor="middle">R² (x100, higher better)</text>
+        <rect x="470" y="${200 - 99.05}" width="35" height="99.05" fill="#3B82F6"/>
+        <text x="488" y="195" fill="#93C5FD" font-size="10" font-family="monospace" text-anchor="middle">LR</text>
+        <rect x="515" y="${200 - 98.20}" width="35" height="98.20" fill="#F43F5E"/>
+        <text x="533" y="195" fill="#FCA5A5" font-size="10" font-family="monospace" text-anchor="middle">LSTM</text>
+
+        <!-- Axis -->
         <line x1="50" y1="200" x2="660" y2="200" stroke="#475569"/>
-        <!-- Actual Price Curve (Blue) -->
-        <polyline points="50,160 100,150 150,140 200,165 250,120 300,110 350,95 400,115 450,85 500,70 550,60 600,45 650,55" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
-        <!-- 4-Layer LSTM Predicted Curve (Green/Cyan) -->
-        <polyline points="50,162 100,152 150,138 200,163 250,122 300,112 350,92 400,118 450,82 500,72 550,58 600,48 650,52" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="5 3"/>
-        <!-- Linear Regression Baseline (Red Dotted) -->
-        <polyline points="50,175 100,160 150,148 200,136 250,124 300,112 350,100 400,88 450,76 500,64 550,52 600,40 650,28" fill="none" stroke="#F43F5E" stroke-width="1.5" stroke-dasharray="3 3"/>
         <!-- Legend -->
-        <circle cx="90" cy="220" r="4" fill="#3B82F6"/>
-        <text x="100" y="224" fill="#E2E8F0" font-size="11" font-family="sans-serif">Actual Stock Price</text>
-        <circle cx="280" cy="220" r="4" fill="#10B981"/>
-        <text x="290" y="224" fill="#E2E8F0" font-size="11" font-family="sans-serif">4-Layer LSTM Prediction (R²: 0.94)</text>
-        <circle cx="510" cy="220" r="4" fill="#F43F5E"/>
-        <text x="520" y="224" fill="#E2E8F0" font-size="11" font-family="sans-serif">Linear Regression (R²: 0.81)</text>
+        <circle cx="90" cy="222" r="4" fill="#3B82F6"/>
+        <text x="100" y="226" fill="#E2E8F0" font-size="11" font-family="sans-serif">Linear Regression (R²: 0.9905) — winner on every metric</text>
+        <circle cx="450" cy="222" r="4" fill="#F43F5E"/>
+        <text x="460" y="226" fill="#E2E8F0" font-size="11" font-family="sans-serif">LSTM (R²: 0.9820)</text>
       </svg>
     `
   },
@@ -49,7 +59,7 @@ const PROJECT_OUTPUTS = {
     domain: 'Security Machine Learning & Information Theory',
     repo: 'https://github.com/hUSsAin976-tech/Intelligent-Password-Strength-Checker',
     dataset: 'RockYou Dataset (100,000+ real-world leaked passwords)',
-    summary: 'Analyzes input strings against 100k+ authentic breach records, computing Shannon character entropy, sequential leetspeak vulnerability, and brute-force time-to-crack.',
+    summary: 'Analyzes input strings against 100k+ authentic breach records, computing Shannon character entropy and brute-force time-to-crack. Example audits below are illustrative, not live output.',
     metrics: [
       { label: 'Breach Corpus', value: '100k+ Leaked' },
       { label: 'Entropy Math', value: 'Shannon Bits' },
@@ -59,7 +69,7 @@ const PROJECT_OUTPUTS = {
     chartHtml: `
       <div style="background: #070A10; padding: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <span style="font-family: monospace; font-size: 0.8rem; color: #60A5FA;">SAMPLE BENCHMARK AUDIT:</span>
+          <span style="font-family: monospace; font-size: 0.8rem; color: #60A5FA;">ILLUSTRATIVE SAMPLE AUDIT:</span>
           <span style="font-family: monospace; font-size: 0.75rem; color: #10B981;">ENGINE READY</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 0.82rem;">
@@ -87,35 +97,35 @@ const PROJECT_OUTPUTS = {
     domain: 'Healthcare ML / Supervised Classification',
     repo: 'https://github.com/hUSsAin976-tech/Diabetes-Prediction-Using-Clinical-Dataset',
     dataset: 'Pima Indians Diabetes Clinical Dataset (diabetes.csv)',
-    summary: 'Full machine learning classification workflow with zero-imputation, feature scaling, and comparison of Random Forest, Logistic Regression, and Support Vector Machines.',
+    summary: "Benchmarked Random Forest, Logistic Regression, and KNN. Logistic Regression was selected for deployment despite Random Forest's marginally higher ROC-AUC — it catches more true diabetic cases (higher recall), and in screening, a missed diagnosis is costlier than a false alarm.",
     metrics: [
-      { label: 'Top Model', value: 'Random Forest' },
-      { label: 'ROC-AUC Score', value: '0.864' },
-      { label: 'F1 Score', value: '0.842' },
-      { label: 'Precision', value: '88.1%' }
+      { label: 'Chosen Model', value: 'Logistic Regression' },
+      { label: 'Recall (Diabetic)', value: '70.4%' },
+      { label: 'ROC-AUC', value: '81.3%' },
+      { label: 'F1 Score', value: '0.650' }
     ],
     chartHtml: `
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #070A10; padding: 16px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08);">
         <div>
-          <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">ROC-AUC BENCHMARK CURVE</div>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">ROC-AUC BENCHMARK (ALL 3 MODELS)</div>
           <svg viewBox="0 0 300 180" style="width: 100%; height: auto; background: #0B0E17; border-radius: 4px;">
             <line x1="30" y1="150" x2="280" y2="150" stroke="#334155"/>
             <line x1="30" y1="20" x2="30" y2="150" stroke="#334155"/>
             <line x1="30" y1="150" x2="280" y2="20" stroke="#475569" stroke-dasharray="3"/>
-            <!-- Random Forest (Green) -->
-            <path d="M30,150 Q50,40 280,20" fill="none" stroke="#10B981" stroke-width="2"/>
-            <!-- Logistic Regression (Blue) -->
-            <path d="M30,150 Q70,70 280,20" fill="none" stroke="#3B82F6" stroke-width="2"/>
-            <text x="40" y="45" fill="#10B981" font-size="10" font-family="monospace">RF AUC = 0.86</text>
-            <text x="40" y="65" fill="#3B82F6" font-size="10" font-family="monospace">LR AUC = 0.82</text>
+            <!-- Random Forest AUC 0.816 (green) -->
+            <path d="M30,150 Q60,45 280,22" fill="none" stroke="#10B981" stroke-width="2"/>
+            <!-- Logistic Regression AUC 0.813 - chosen (blue, bold) -->
+            <path d="M30,150 Q62,47 280,24" fill="none" stroke="#3B82F6" stroke-width="3"/>
+            <text x="40" y="45" fill="#10B981" font-size="10" font-family="monospace">RF AUC = 0.816</text>
+            <text x="40" y="65" fill="#3B82F6" font-size="10" font-family="monospace">LR AUC = 0.813 (chosen)</text>
           </svg>
         </div>
         <div>
-          <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">CONFUSION MATRIX</div>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">CONFUSION MATRIX (LOGISTIC REGRESSION)</div>
           <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.8rem; text-align: center;">
             <tr><th style="padding: 6px; border: 1px solid #1E293B; background: #0E1422;">Actual \\ Pred</th><th style="padding: 6px; border: 1px solid #1E293B; background: #0E1422;">Non-Diabetic</th><th style="padding: 6px; border: 1px solid #1E293B; background: #0E1422;">Diabetic</th></tr>
-            <tr><td style="padding: 8px; border: 1px solid #1E293B; background: #0E1422;">Non-Diabetic</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(16,185,129,0.2); color: #34D399; font-weight: 600;">TN: 94</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(239,68,68,0.15); color: #F87171;">FP: 13</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #1E293B; background: #0E1422;">Diabetic</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(239,68,68,0.15); color: #F87171;">FN: 11</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(16,185,129,0.2); color: #34D399; font-weight: 600;">TP: 36</td></tr>
+            <tr><td style="padding: 8px; border: 1px solid #1E293B; background: #0E1422;">Non-Diabetic</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(16,185,129,0.2); color: #34D399; font-weight: 600;">TN: 75</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(239,68,68,0.15); color: #F87171;">FP: 25</td></tr>
+            <tr><td style="padding: 8px; border: 1px solid #1E293B; background: #0E1422;">Diabetic</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(239,68,68,0.15); color: #F87171;">FN: 16</td><td style="padding: 8px; border: 1px solid #1E293B; background: rgba(16,185,129,0.2); color: #34D399; font-weight: 600;">TP: 38</td></tr>
           </table>
         </div>
       </div>
@@ -126,7 +136,7 @@ const PROJECT_OUTPUTS = {
     domain: 'Expert Decision Engine / Python Tkinter GUI',
     repo: 'https://github.com/hUSsAin976-tech/AI-Driven-Career-Course-Advisory-Management-System',
     dataset: 'Academic profiling & Course prerequisite graphs',
-    summary: 'Desktop AI engine developed in Python with Tkinter. Ingests student GPA, subject competencies, and personal career preferences to generate algorithmic curriculum recommendations.',
+    summary: 'Desktop AI engine developed in Python with Tkinter. Ingests student GPA, subject competencies, and personal career preferences to generate algorithmic curriculum recommendations. Terminal output below is an illustrative example run, not a live/verified log.',
     metrics: [
       { label: 'Interface', value: 'Python Tkinter' },
       { label: 'Evaluation Method', value: 'Weighted Heuristics' },
@@ -135,7 +145,7 @@ const PROJECT_OUTPUTS = {
     ],
     chartHtml: `
       <div style="background: #070A10; padding: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); font-family: monospace; font-size: 0.8rem;">
-        <div style="color: #60A5FA; margin-bottom: 8px;">[ADVISORY TERMINAL DISPATCH OUTPUT]</div>
+        <div style="color: #60A5FA; margin-bottom: 8px;">[ILLUSTRATIVE EXAMPLE RUN]</div>
         <div style="background: #0B0E17; padding: 12px; border-left: 3px solid #3B82F6; color: #E2E8F0; line-height: 1.6;">
           &gt; INGESTED PROFILE: CGPA 3.75 | Math: 92% | Programming: 96% | Logic: 89%<br>
           &gt; INFERRED STRENGTH: High Mathematical Reasoning & Low-level Systems<br>
@@ -152,34 +162,34 @@ const PROJECT_OUTPUTS = {
     title: 'Dimensionality Reduction with PCA Pipeline',
     domain: 'Unsupervised Feature Engineering & Math',
     repo: 'https://github.com/hUSsAin976-tech/Dimensionality-Reduction-with-PCA',
-    dataset: 'Multi-dimensional numerical dataset',
-    summary: 'Complete mathematical PCA notebook: data standardization, covariance matrix eigenvalue decomposition, 2D component projection, Scree plot analysis, and inverse transform reconstruction loss.',
+    dataset: 'UCI Wine Recognition Dataset (178 samples, 13 features, 3 cultivars)',
+    summary: 'Standardized 13 chemical features, fit PCA, and reduced to 2 components for visualization. Retained 55.4% of total variance — an honest trade-off for a 2D projection, not a maximized score.',
     metrics: [
-      { label: 'Components', value: '2D Latent Space' },
-      { label: 'PC1 Variance', value: '58.4%' },
-      { label: 'PC2 Variance', value: '23.8%' },
-      { label: 'Cumulative Variance', value: '82.2% Retained' }
+      { label: 'Samples', value: '178 (Wine)' },
+      { label: 'PC1 Variance', value: '36.2%' },
+      { label: 'PC2 Variance', value: '19.2%' },
+      { label: 'Cumulative Variance', value: '55.4% Retained' }
     ],
     chartHtml: `
       <div style="background: #070A10; padding: 16px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08);">
-        <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">SCREE PLOT: VARIANCE EXPLAINED BY EIGENVECTORS</div>
+        <div style="font-family: monospace; font-size: 0.75rem; color: #60A5FA; margin-bottom: 6px;">SCREE PLOT: VARIANCE EXPLAINED (13 COMPONENTS, UCI WINE)</div>
         <svg viewBox="0 0 600 160" style="width: 100%; height: auto; background: #0B0E17; border-radius: 4px;">
-          <!-- Bars -->
-          <rect x="70" y="40" width="80" height="90" fill="#3B82F6" rx="2"/>
-          <text x="110" y="30" fill="#60A5FA" font-size="11" font-family="monospace" text-anchor="middle">PC1: 58.4%</text>
-          
-          <rect x="180" y="85" width="80" height="45" fill="#60A5FA" rx="2"/>
-          <text x="220" y="75" fill="#93C5FD" font-size="11" font-family="monospace" text-anchor="middle">PC2: 23.8%</text>
+          <!-- Bars, heights proportional to real variance % -->
+          <rect x="70" y="66" width="80" height="64" fill="#3B82F6" rx="2"/>
+          <text x="110" y="58" fill="#60A5FA" font-size="11" font-family="monospace" text-anchor="middle">PC1: 36.2%</text>
+
+          <rect x="180" y="96" width="80" height="34" fill="#60A5FA" rx="2"/>
+          <text x="220" y="88" fill="#93C5FD" font-size="11" font-family="monospace" text-anchor="middle">PC2: 19.2%</text>
 
           <rect x="290" y="110" width="80" height="20" fill="#475569" rx="2"/>
-          <text x="330" y="102" fill="#94A3B8" font-size="11" font-family="monospace" text-anchor="middle">PC3: 9.8%</text>
+          <text x="330" y="102" fill="#94A3B8" font-size="11" font-family="monospace" text-anchor="middle">PC3: ~11.1%</text>
 
-          <rect x="400" y="118" width="80" height="12" fill="#334155" rx="2"/>
-          <text x="440" y="112" fill="#64748B" font-size="11" font-family="monospace" text-anchor="middle">PC4: 5.2%</text>
+          <rect x="400" y="120" width="80" height="10" fill="#334155" rx="2"/>
+          <text x="440" y="112" fill="#64748B" font-size="11" font-family="monospace" text-anchor="middle">PC4+: remainder</text>
 
           <!-- Axis -->
           <line x1="40" y1="130" x2="520" y2="130" stroke="#475569"/>
-          <text x="280" y="150" fill="#94A3B8" font-size="10" font-family="monospace" text-anchor="middle">Principal Components (Top 2 Capture 82.2% Total Variance)</text>
+          <text x="280" y="150" fill="#94A3B8" font-size="10" font-family="monospace" text-anchor="middle">Principal Components (Top 2 Capture 55.4% Total Variance)</text>
         </svg>
       </div>
     `
@@ -189,7 +199,7 @@ const PROJECT_OUTPUTS = {
     domain: 'Applied Industry ML & Research Workflows',
     repo: 'https://github.com/hUSsAin976-tech/ML-internship-at-FlyRank',
     dataset: 'Production analytics & Ranking experimentation logs',
-    summary: 'Research and implementation notebooks covering exploratory data analysis, data pre-processing pipelines, model baseline evaluations, and performance benchmarking during ML internship at FlyRank.',
+    summary: 'Research and implementation notebooks covering exploratory data analysis, data pre-processing pipelines, model baseline evaluations, and performance benchmarking during my ML internship at FlyRank.',
     metrics: [
       { label: 'Role', value: 'ML Intern' },
       { label: 'Focus Area', value: 'Data & Model Pipelines' },

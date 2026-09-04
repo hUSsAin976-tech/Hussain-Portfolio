@@ -31,8 +31,9 @@
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -55,11 +56,10 @@ body {
   position: relative;
 }
 
-/* Technical Grid Pattern Overlay */
 .grid-overlay {
   position: fixed;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
   background-size: 44px 44px;
@@ -68,15 +68,26 @@ body {
   opacity: 0.6;
 }
 
-/* Typography (Strict Inter 600 / 400) */
-h1, h2, h3, h4, h5, h6, .font-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
   font-family: var(--font-family);
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
-p, span, li, a, input, textarea, button {
+p,
+span,
+li,
+a,
+input,
+textarea,
+button {
   font-family: var(--font-family);
   font-weight: 400;
 }
@@ -98,9 +109,6 @@ p, span, li, a, input, textarea, button {
   padding-right: 24px;
 }
 
-/* ==========================================================================
-   SCROLL REVEAL ANIMATIONS (Instagram Reel Style)
-   ========================================================================== */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(44px) scale(0.97);
@@ -113,14 +121,30 @@ p, span, li, a, input, textarea, button {
   transform: translateY(0) scale(1);
 }
 
-.stagger-1 { transition-delay: 0.08s; }
-.stagger-2 { transition-delay: 0.16s; }
-.stagger-3 { transition-delay: 0.24s; }
-.stagger-4 { transition-delay: 0.32s; }
-.stagger-5 { transition-delay: 0.40s; }
-.stagger-6 { transition-delay: 0.48s; }
+.stagger-1 {
+  transition-delay: 0.08s;
+}
 
-/* Corner Crosshairs */
+.stagger-2 {
+  transition-delay: 0.16s;
+}
+
+.stagger-3 {
+  transition-delay: 0.24s;
+}
+
+.stagger-4 {
+  transition-delay: 0.32s;
+}
+
+.stagger-5 {
+  transition-delay: 0.40s;
+}
+
+.stagger-6 {
+  transition-delay: 0.48s;
+}
+
 .corner-frame {
   position: relative;
 }
@@ -137,15 +161,21 @@ p, span, li, a, input, textarea, button {
   transition: color 0.3s ease;
 }
 
-.corner-frame::before { top: -7px; left: -7px; }
-.corner-frame::after { bottom: -7px; right: -7px; }
+.corner-frame::before {
+  top: -7px;
+  left: -7px;
+}
+
+.corner-frame::after {
+  bottom: -7px;
+  right: -7px;
+}
 
 .corner-frame:hover::before,
 .corner-frame:hover::after {
   color: var(--accent);
 }
 
-/* Tech Badges */
 .tech-badge {
   display: inline-flex;
   align-items: center;
@@ -158,7 +188,7 @@ p, span, li, a, input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-secondary);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .dark-section .tech-badge {
@@ -187,14 +217,22 @@ p, span, li, a, input, textarea, button {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(2); opacity: 0; }
-  100% { transform: scale(1); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
-/* ==========================================================================
-   NAVIGATION BAR (SOLID BLACK WITH BLUE LINE LOGO)
-   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -330,22 +368,16 @@ p, span, li, a, input, textarea, button {
   stroke: #FFFFFF;
 }
 
-/* ==========================================================================
-   SECTION 01: HOME / HERO
-   Seamless Background Color Match + 1.15x Scaled Image (NO CARD)
-   ========================================================================== */
 .hero-showcase {
   position: relative;
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  /* Exact color matching the avatar image background to eliminate any shade/box */
   background: linear-gradient(100deg, #E5E6EA 0%, #E8E9EE 45%, #EBEAF0 100%);
   overflow: hidden;
   padding: 40px 0 80px 0;
 }
 
-/* Character Backdrop Layer - 1.15x Enlarged */
 .hero-visual-backdrop {
   position: absolute;
   inset: 0;
@@ -363,25 +395,21 @@ p, span, li, a, input, textarea, button {
   max-width: 76%;
   object-fit: contain;
   object-position: right bottom;
-  /* 1.15x Enlarged from current size as requested */
   transform: scale(1.15);
   transform-origin: right bottom;
-  /* Soft fade mask on the left edge so colors merge seamlessly */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 40%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 40%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.85) 18%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.85) 18%, black 40%);
 }
 
-/* Soft blend gradient matching the exact background palette */
 .hero-blend-gradient {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     linear-gradient(to right, #E5E6EA 42%, rgba(230, 231, 236, 0.88) 60%, rgba(235, 234, 240, 0.15) 85%, transparent 100%),
     linear-gradient(to top, #E5E6EA 2%, transparent 20%);
   pointer-events: none;
 }
 
-/* Text Plane directly on the canvas without any card */
 .hero-content-plane {
   position: relative;
   z-index: 3;
@@ -468,7 +496,6 @@ p, span, li, a, input, textarea, button {
   transform: translateY(-2px);
 }
 
-/* Quick specs strip */
 .hero-specs-strip {
   display: flex;
   flex-wrap: wrap;
@@ -495,12 +522,9 @@ p, span, li, a, input, textarea, button {
   color: #0F172A;
 }
 
-/* ==========================================================================
-   SECTION 02: ACTUAL PROJECTS (Graded Midnight Blue/Black Galaxy)
-   ========================================================================== */
 .projects-galaxy {
   position: relative;
-  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.16) 0%, #06080E 65%, #05060A 100%);
+  background: radial-gradient(circle at 95% 10%, rgba(14, 61, 215, 0.486) 0%, #02050c 65%, #05060A 100%);
   color: #FFFFFF;
   padding: 110px 0;
   border-top: 1px solid #1E293B;
@@ -542,7 +566,6 @@ p, span, li, a, input, textarea, button {
   max-width: 680px;
 }
 
-/* Grid of Futuristic Project Cards */
 .projects-deck {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -628,7 +651,6 @@ p, span, li, a, input, textarea, button {
   line-height: 1.6;
 }
 
-/* Key Metrics Box */
 .deck-metrics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -663,7 +685,6 @@ p, span, li, a, input, textarea, button {
   color: #60A5FA;
 }
 
-/* Stack tags */
 .deck-tags {
   display: flex;
   flex-wrap: wrap;
@@ -680,7 +701,6 @@ p, span, li, a, input, textarea, button {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Footer of Project Card with BOTH Preview Link and Repo Link */
 .deck-card-footer {
   padding: 14px 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -726,9 +746,6 @@ p, span, li, a, input, textarea, button {
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* ==========================================================================
-   SECTION 03: ABOUT (Graded High-Tech Clean)
-   ========================================================================== */
 .about-section {
   padding: 110px 0;
   background-color: #FAFAFA;
@@ -804,7 +821,7 @@ p, span, li, a, input, textarea, button {
 .principle-box:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
 }
 
 .principle-num {
@@ -826,7 +843,6 @@ p, span, li, a, input, textarea, button {
   line-height: 1.55;
 }
 
-/* Capabilities Slate */
 .capabilities-slate {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -835,7 +851,7 @@ p, span, li, a, input, textarea, button {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
 .slate-top {
@@ -892,9 +908,6 @@ p, span, li, a, input, textarea, button {
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   LARGE MULTI-LINE BLACK FOOTER (With "Contact Me", Gmail Compose, GitHub, LinkedIn)
-   ========================================================================== */
 .footer-grand {
   background-color: #05070C;
   color: #F1F5F9;
@@ -911,7 +924,6 @@ p, span, li, a, input, textarea, button {
   gap: 40px;
 }
 
-/* Footer Line 1: Header Banner */
 .footer-line-header {
   display: flex;
   justify-content: space-between;
@@ -940,7 +952,6 @@ p, span, li, a, input, textarea, button {
   color: #94A3B8;
 }
 
-/* Footer Line 2: Communications Hub with "Contact Me" and Direct Gmail Compose */
 .footer-line-comms {
   display: flex;
   justify-content: space-between;
@@ -1036,7 +1047,6 @@ p, span, li, a, input, textarea, button {
   fill: currentColor;
 }
 
-/* Footer Line 3: Navigation & Credentials */
 .footer-line-nav {
   display: flex;
   justify-content: space-between;
@@ -1072,7 +1082,6 @@ p, span, li, a, input, textarea, button {
   color: #64748B;
 }
 
-/* Footer Line 4: Engineering Telemetry & Copyright */
 .footer-line-bottom {
   display: flex;
   justify-content: space-between;
@@ -1102,9 +1111,6 @@ p, span, li, a, input, textarea, button {
   background: rgba(37, 99, 235, 0.15);
 }
 
-/* ==========================================================================
-   INTERACTIVE PROJECT OUTPUT PREVIEW MODAL
-   ========================================================================== */
 .preview-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1220,7 +1226,6 @@ p, span, li, a, input, textarea, button {
   background: #090C14;
 }
 
-/* Toast Notice */
 .toast-notice {
   position: fixed;
   bottom: 28px;
@@ -1232,7 +1237,7 @@ p, span, li, a, input, textarea, button {
   font-size: 0.8rem;
   border: 1px solid rgba(37, 99, 235, 0.4);
   border-radius: 4px;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
   transform: translateY(120px);
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1244,9 +1249,6 @@ p, span, li, a, input, textarea, button {
   opacity: 1;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
 @media (max-width: 1100px) {
   .projects-deck {
     grid-template-columns: repeat(2, 1fr);
@@ -1258,6 +1260,7 @@ p, span, li, a, input, textarea, button {
     opacity: 0.35;
     max-width: 90%;
   }
+
   .about-columns {
     grid-template-columns: 1fr;
   }
@@ -1277,15 +1280,15 @@ p, span, li, a, input, textarea, button {
     flex-direction: column;
     padding: 24px;
     border-bottom: 1px solid #1E2330;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: none;
     gap: 20px;
   }
-  
+
   .nav-links.active {
     display: flex;
   }
-  
+
   .mobile-toggle {
     display: block;
   }
